@@ -1,10 +1,12 @@
 import { useState } from "react";
 
-const Product = () => {
+const Product = ({productName}) => {
+    // const Product = (props) => {
     const [count, setCount] = useState(0);
+
     return (
         <div>
-            <span className="m-2 text-info">Laptop</span>
+            <span className="m-2 text-info">{productName}</span>
             <span className="m-2 badge bg-primary">{format()}</span>
             <button
                 onClick={handleIncrement}
