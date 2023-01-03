@@ -1,7 +1,8 @@
 import { useState } from "react";
 
-const Product = ({productName}) => {
-    const [count, setCount] = useState(0);
+const Product = ({ productName, count: propCount, children }) => {
+    const [count, setCount] = useState(propCount);
+    // const [count, setCount] = useState(count);
     return (
         <div>
             <span className="m-2 text-info">{productName}</span>
@@ -24,6 +25,7 @@ const Product = ({productName}) => {
             >
                 delete
             </button>
+            <p>{children}</p>
         </div>
     );
     function handleIncrement() {
