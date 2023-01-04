@@ -11,14 +11,19 @@ const Products = () => {
         <>
             {products.map((product, index) => (
                 <Product
+                    onDelete={handleDelete}
+                    id={product.id}
                     key={index}
                     productName={product.productName}
                     count={product.count}
-                >
-                </Product>
+                ></Product>
             ))}
         </>
     );
+    function handleDelete(productId) {
+        const newProducts = products.filter((p) => p.id !== productId);
+        setProducts(newProducts);
+    }
 };
 
 export default Products;

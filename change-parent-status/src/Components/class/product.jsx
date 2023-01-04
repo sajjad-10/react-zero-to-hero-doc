@@ -40,7 +40,7 @@ class Product extends Component {
         this.setState({ count: count - 1 });
     };
     handleDelete = () => {
-        console.log("delete");
+        this.props.onDelete(this.props.id);
     };
     format() {
         if (this.state.count === 0) {
