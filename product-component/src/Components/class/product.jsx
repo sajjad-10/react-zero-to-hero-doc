@@ -2,7 +2,7 @@ import { Component } from "react";
 
 class Product extends Component {
     state = {
-        count: 2,
+        count: this.props.count,
     };
     render() {
         const { productName } = this.props;
