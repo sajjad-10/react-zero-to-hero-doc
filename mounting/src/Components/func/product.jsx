@@ -1,8 +1,12 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import ProductContext from "../../context/products";
 const Product = ({ productName, count: propCount, id }) => {
     const productContext = useContext(ProductContext);
-
+    useEffect(() => {
+        return () => {
+            console.log("fun-->Product (child) ///- willUnmount");
+        };
+    }, []);
     return (
         <div>
             <span className="m-2 text-info">{productName}</span>
