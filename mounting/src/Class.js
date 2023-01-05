@@ -3,6 +3,14 @@ import Navbar from "./Components/class/navbar";
 import Products from "./Components/class/products";
 import ProductContext from "./context/products";
 class Class extends Component {
+    constructor(props) {
+        super(props);
+        console.log("class-->Class (APP) /- constructor");
+    }
+
+    componentDidMount() {
+        console.log("class-->Class (APP) /- didMount");
+    }
     state = {
         products: [
             { id: 1, count: 2, productName: "Laptop" },
@@ -11,6 +19,7 @@ class Class extends Component {
         ],
     };
     render() {
+        console.log("class-->Class (APP) /- render");
         return (
             <>
                 <ProductContext.Provider

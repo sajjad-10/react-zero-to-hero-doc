@@ -3,8 +3,16 @@ import Product from "./product";
 import ProductContext from "../../context/products";
 
 class Products extends Component {
-    static contextType = ProductContext
+    static contextType = ProductContext;
+    constructor(props) {
+        super(props);
+        console.log("class-->Products (child) //- constructor");
+    }
+    componentDidMount() {
+        console.log("class-->Products (child) //- didMount");
+    }
     render() {
+        console.log("class-->Products (child) //- render");
         return (
             <div>
                 <button

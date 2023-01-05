@@ -3,7 +3,15 @@ import ProductContext from "../../context/products";
 
 class Product extends Component {
     static contextType = ProductContext;
+    constructor(props) {
+        super(props);
+        console.log("class-->Product (child) ///- constructor");
+    }
+    componentDidMount() {
+        console.log("class-->Product (child) ///- didMount");
+    }
     render() {
+        console.log("class-->Product (child) ///- render");
         const { productName } = this.props;
         return (
             <div>
