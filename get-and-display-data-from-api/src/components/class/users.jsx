@@ -5,10 +5,19 @@ class Users extends Component {
     state = {
         users: [], // on start is empty
     };
+    async componentDidMount() {
+        const response = await axios.get("https://reqres.in/api/users/");
+        this.setState({ users: response.data.data });
+    }
     render() {
         return (
             <>
-                <button onClick={this.handleCreate} className="btn btn-lg btn-primary">Create</button>
+                <button
+                    onClick={this.handleCreate}
+                    className="btn btn-lg btn-primary"
+                >
+                    Create
+                </button>
                 <div className="row">
                     {this.state.users.map((user) => {
                         return (
@@ -26,12 +35,18 @@ class Users extends Component {
                                 <h5>{user.email}</h5>
                                 <div className="row">
                                     <div className="col-6">
-                                        <button onClick={this.handleUpdate} className="btn btn-info btn-sm">
+                                        <button
+                                            onClick={this.handleUpdate}
+                                            className="btn btn-info btn-sm"
+                                        >
                                             Update
                                         </button>
                                     </div>
                                     <div className="col-6">
-                                        <button onClick={this.handleDelete} className="btn btn-danger btn-sm">
+                                        <button
+                                            onClick={this.handleDelete}
+                                            className="btn btn-danger btn-sm"
+                                        >
                                             Delete
                                         </button>
                                     </div>

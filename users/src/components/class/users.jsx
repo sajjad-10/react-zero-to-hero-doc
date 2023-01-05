@@ -5,6 +5,10 @@ class Users extends Component {
     state = {
         users: [], // on start is empty
     };
+    async componentDidMount() {
+        const response = await axios.get("https://reqres.in/api/users/");
+        this.setState({ users: response.data.data });
+    }
     render() {
         return (
             <>
