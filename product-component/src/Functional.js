@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "./Components/func/navbar";
 import Products from "./Components/func/products";
+import ProductContext from "./context/products";
 
 function Functional() {
     const [products, setProducts] = useState([
@@ -10,15 +11,19 @@ function Functional() {
     ]);
     return (
         <>
-            <h3>React Functional Components</h3>
-            <Navbar products={products} />
-            <Products
-                products={products}
-                onDelete={handleDelete}
-                onIncrement={handleIncrement}
-                onDecrement={handleDecrement}
-                onReset={handleReset}
-            />{" "}
+            <ProductContext.Provider
+                value={{
+                    products: products,
+                    onDelete: handleDelete,
+                    onIncrement: handleIncrement,
+                    onDecrement: handleDecrement,
+                    onReset: handleReset,
+                }}
+            >
+                <h3>React Functional Components</h3>
+                <Navbar />
+                <Products />
+            </ProductContext.Provider>
         </>
     );
     function handleDelete(productId) {

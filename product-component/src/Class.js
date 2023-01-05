@@ -1,6 +1,7 @@
 import { Component } from "react";
 import Navbar from "./Components/class/navbar";
 import Products from "./Components/class/products";
+import ProductContext from "./context/products";
 class Class extends Component {
     state = {
         products: [
@@ -12,15 +13,19 @@ class Class extends Component {
     render() {
         return (
             <>
-                <h3>React Class Components</h3>
-                <Navbar products={this.state.products} />
-                <Products
-                    products={this.state.products}
-                    onDelete={this.handleDelete}
-                    onIncrement={this.handleIncrement}
-                    onDecrement={this.handleDecrement}
-                    onReset={this.handleReset}
-                />
+                <ProductContext.Provider
+                    value={{
+                        products: this.state.products,
+                        onDelete: this.handleDelete,
+                        onIncrement: this.handleIncrement,
+                        onDecrement: this.handleDecrement,
+                        onReset: this.handleReset,
+                    }}
+                >
+                    <h3>React Class Components</h3>
+                    <Navbar />
+                    <Products />
+                </ProductContext.Provider>
             </>
         );
     }
