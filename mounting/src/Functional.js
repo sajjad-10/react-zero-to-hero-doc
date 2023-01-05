@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "./Components/func/navbar";
 import Products from "./Components/func/products";
 import ProductContext from "./context/products";
@@ -9,6 +9,12 @@ function Functional() {
         { id: 2, count: 5, productName: "Phone" },
         { id: 3, count: 3, productName: "AirPods" },
     ]);
+    useEffect(() => {
+        console.log("fun-->Class (APP) /- didMount & didUpdate");
+    });
+    useEffect(() => {
+        console.log("fun-->Class (APP) /- didMount");
+    }, []);
     return (
         <>
             <ProductContext.Provider
