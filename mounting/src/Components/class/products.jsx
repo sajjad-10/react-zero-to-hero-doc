@@ -11,6 +11,12 @@ class Products extends Component {
     componentDidMount() {
         console.log("class-->Products (child) //- didMount");
     }
+    componentDidUpdate() {
+        console.log("class-->Products (child) //- didUpdate");
+    }
+    componentWillUnmount() {
+        console.log("class-->Products (child) //- willUnmount");
+    }
     render() {
         console.log("class-->Products (child) //- render");
         return (

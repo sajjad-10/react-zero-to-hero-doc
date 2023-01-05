@@ -11,6 +11,12 @@ class Class extends Component {
     componentDidMount() {
         console.log("class-->Class (APP) /- didMount");
     }
+    componentDidUpdate() {
+        console.log("class-->Class (APP) /- didUpdate");
+    }
+    componentWillUnmount() {
+        console.log("class-->Class (APP) /- willUnmount");
+    }
     state = {
         products: [
             { id: 1, count: 2, productName: "Laptop" },

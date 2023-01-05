@@ -10,6 +10,12 @@ class Navbar extends Component {
     componentDidMount() {
         console.log("class-->Navbar (child) //- didMount");
     }
+    componentDidUpdate() {
+        console.log("class-->Navbar (child) //- didUpdate");
+    }
+    componentWillUnmount() {
+        console.log("class-->Navbar (child) //- willUnmount");
+    }
     render() {
         console.log("class-->Navbar (child) //- render");
         return (

@@ -10,6 +10,12 @@ class Product extends Component {
     componentDidMount() {
         console.log("class-->Product (child) ///- didMount");
     }
+    componentDidUpdate() {
+        console.log("class-->Product (child) ///- didUpdate");
+    }
+    componentWillUnmount() {
+        console.log("class-->Product (child) ///- willUnmount");
+    }
     render() {
         console.log("class-->Product (child) ///- render");
         const { productName } = this.props;
