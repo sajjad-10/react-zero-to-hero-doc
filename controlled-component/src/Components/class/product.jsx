@@ -1,9 +1,6 @@
 import { Component } from "react";
 
 class Product extends Component {
-    state = {
-        count: this.props.count,
-    };
     render() {
         const { productName } = this.props;
         return (
@@ -32,21 +29,19 @@ class Product extends Component {
         );
     }
     handleIncrement = () => {
-        const { count } = this.state;
-        this.setState({ count: count + 1 });
+        this.props.onIncrement(this.props.id);
     };
     handleDecrement = () => {
-        const { count } = this.state;
-        this.setState({ count: count - 1 });
+        this.props.onDecrement(this.props.id);
     };
     handleDelete = () => {
         this.props.onDelete(this.props.id);
     };
     format() {
-        if (this.state.count === 0) {
+        if (this.props.count === 0) {
             return "zero";
         } else {
-            return this.state.count;
+            return this.props.count;
         }
     }
 }
