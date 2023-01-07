@@ -1,9 +1,12 @@
 import Class from "./class";
+import { BrowserRouter } from "react-router-dom";
 
 const App = () => {
     return (
         <>
-            <Class />
+            <BrowserRouter>
+                <Class />
+            </BrowserRouter>
         </>
     );
 };
