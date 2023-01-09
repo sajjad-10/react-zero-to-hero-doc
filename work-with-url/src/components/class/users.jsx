@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import LoadingUsers from "../loading/loadingUsers";
 
@@ -40,9 +41,11 @@ class Users extends Component {
                                         }}
                                         alt={user.first_name}
                                     />
-                                    <h4>
-                                        {user.first_name} {user.last_name}
-                                    </h4>
+                                    <Link to={`/users/${user.id}`}>
+                                        <h4>
+                                            {user.first_name} {user.last_name}
+                                        </h4>
+                                    </Link>
                                     <h5>{user.email}</h5>
                                     <div className="row">
                                         <div className="col-6">
