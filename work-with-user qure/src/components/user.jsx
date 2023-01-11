@@ -1,11 +1,14 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation } from "react-router-dom";
+import queryString from "query-string";
 
 const User = () => {
     const { id } = useParams();
+    let location = useLocation();
 
     const [user, setUser] = useState({});
+    console.log(queryString.parse(location.search)); // ?order=oldest$s=phone
 
     useEffect(() => {
         async function fetchData() {
