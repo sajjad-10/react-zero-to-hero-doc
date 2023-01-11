@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Users from "./components/class/users";
+import User from "./components/user";
 import Login from "./components/class/login";
 import Register from "./components/class/register";
 import Home from "./components/class/home";
@@ -15,6 +16,7 @@ class Class extends Component {
                 <Navbar />
                 <div className="container mt-3">
                     <Routes>
+                        <Route path="/users/:id" element={<User/>} />
                         <Route path="/users" element={<Users/>} />
                         <Route path="/login" element={<Login/>} />
                         <Route path="/register" element={<Register/>} />
