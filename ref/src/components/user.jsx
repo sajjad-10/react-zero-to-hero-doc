@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 
@@ -12,6 +12,8 @@ const User = () => {
     console.log(navigate, "location");
     console.log(queryString.parse(location.search)); // ?order=oldest$s=phone
 
+    const firstName = useRef(null);
+
     useEffect(() => {
         async function fetchData() {
             const response = await axios.get(
@@ -20,6 +22,7 @@ const User = () => {
             setUser(response.data.data);
         }
         fetchData();
+        console.log(firstName.current);
     }, []);
     return (
         <>
@@ -31,7 +34,7 @@ const User = () => {
                 }}
                 alt={user.first_name}
             />
-            <h4>
+            <h4 ref={firstName}>
                 {user.first_name} {user.last_name}
             </h4>
             <button
