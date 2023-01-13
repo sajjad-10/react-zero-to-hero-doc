@@ -15,5 +15,6 @@
 | Get and display data from api | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc/tree/master/change-parent-status) | axios, componentDidMount          |
 | Loading Skeleton              | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc/tree/master/change-parent-status) | componentDidMount, use-Package    |
 | Work with User                | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc/tree/master/change-parent-status) | lifecycle                         |
-| React router DOM              | [Link](https://github.com/sajjad-10/)                                                        | Routes, Route, NavLink            |
-| Work with URL                 | [Link](https://github.com/sajjad-10/)                                                        | Routes, Route, NavLink, useParams |
+| React router DOM              | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc)                                                        | Routes, Route, NavLink            |
+| Work with URL                 | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc)                                                        | Routes, Route, NavLink, useParams |
+| Redirect                      | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc)                                                        | Routes, Route, useNavigate        |

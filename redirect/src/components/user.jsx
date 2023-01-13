@@ -1,13 +1,15 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useParams, useLocation } from "react-router-dom";
+import { useParams, useLocation, useNavigate } from "react-router-dom";
 import queryString from "query-string";
 
 const User = () => {
     const { id } = useParams();
     let location = useLocation();
+    let navigate = useNavigate();
 
     const [user, setUser] = useState({});
+    console.log(navigate, "location");
     console.log(queryString.parse(location.search)); // ?order=oldest$s=phone
 
     useEffect(() => {
@@ -32,6 +34,12 @@ const User = () => {
             <h4>
                 {user.first_name} {user.last_name}
             </h4>
+            <button
+                onClick={() => navigate("/users")}
+                className="btn btn-info mt-3"
+            >
+                Redirect to Users
+            </button>
         </>
     );
 };
