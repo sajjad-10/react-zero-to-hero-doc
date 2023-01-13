@@ -7,6 +7,7 @@ import Home from "./components/class/home";
 
 import Navbar from "./components/navbar";
 import { Route, Routes } from "react-router-dom";
+import NotFound from "./notfound";
 class Class extends Component {
     state = {};
     render() {
@@ -20,7 +21,9 @@ class Class extends Component {
                         <Route path="/users" element={<Users />} />
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
-                        <Route path="/" element={<Home />} />
+                        <Route path="/" exact element={<Home />} />
+                        <Route path="*" element={<NotFound to="/" />} />{" "}
+                        {/* redirect if noting macho*/}
                     </Routes>
                 </div>
             </>
