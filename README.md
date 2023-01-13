@@ -18,4 +18,4 @@
 | React router DOM              | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc)                                  | Routes, Route, NavLink            |
 | Work with URL                 | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc)                                  | Routes, Route, NavLink, useParams |
 | Redirect                      | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc/tree/master/redirect)             | Routes, Route, useNavigate        |
-| Forms -                       | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc)                                  |                                   |
+| Forms - Basic                 | [Link](https://github.com/sajjad-10/react-zero-to-hero-doc)                                  | form, onSubmit                    |
